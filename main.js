@@ -122,6 +122,10 @@ $(document).ready(function () {
         $("#btnNext3").css("display","none");
     })
     
+    $("#btnNext4").click(function(){
+        window.open("https://kryptonia.io");
+    })
+    
     //setInterval(doFade, 1000);
     
         
