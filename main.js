@@ -25,7 +25,6 @@ function doFade(){
 
 function Submit() {
     var name = $("#txtName").val();
-    var last = $('#txtLast').val();
     var email = $("#txtEmail").val();
     var phone = $("#txtPhone").val();
     
@@ -33,10 +32,7 @@ function Submit() {
         
         $("#msgDanger").text("Ingrese su Nombre para poder continuar");
         $("#txtName").focus();
-    } else if (last == '') {
-        $("#msgDanger").text("Ingrese su Apellido para poder continuar");
-        $('#txtLast').focus();
-    } else if (email == '') {
+    }  else if (email == '') {
         $("#msgDanger").text("Ingrese su Correo para poder continuar");
         $("#txtEmail").focus();
     } else if (phone == '') {
@@ -46,7 +42,6 @@ function Submit() {
 
         $.post('./setUser.php', {
             user_name: name,
-            user_last: last,
             user_email: email,
             user_phone: phone
         }).done(function (data) {

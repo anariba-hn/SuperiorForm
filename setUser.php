@@ -1,7 +1,6 @@
 <?php
 include ("./connex.php"); //include db connection. import $cnn variable.
 $name    = $_POST['user_name'];
-$last  = $_POST['user_last'];
 $email     = $_POST['user_email'];
 $phone = $_POST['user_phone'];
 $response = array();
@@ -20,7 +19,7 @@ if(isset($name, $last, $email, $phone))
     }
     else{
         
-        $query2 = "INSERT INTO tbl_users(user_name, user_last, user_email, user_phone) VALUES('$name','$last','$email','$phone')";
+        $query2 = "INSERT INTO tbl_users(user_name, user_email, user_phone) VALUES('$name','$email','$phone')";
         if (!$result = mysqli_query($cnn, $query2))
         exit(mysqli_error($conn));
         else{
