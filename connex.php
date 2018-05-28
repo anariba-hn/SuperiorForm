@@ -3,7 +3,7 @@ ini_set('display_errors', true);
 //Connection Variables
 $host = "localhost";
 $user = "root";
-$password = "root";
+$password = "superior2020";
 $db = "superiorForm";
 
 //Set connection to MySQL
