@@ -3,6 +3,7 @@ function Submit() {
     var name = $("#txtName").val();
     var email = $("#txtEmail").val();
     var phone = $("#txtPhone").val();
+    var result = validate();
     
     if (name == '') {
         
@@ -13,11 +14,19 @@ function Submit() {
         $("#spnAlert").text("Ingrese su Correo para poder continuar");
         $("#alert-modal").modal("show");
         $("#txtEmail").focus();
+    } else if(!result){
+        $("#spnAlert").text("Ingrese una direccion de correo Valida");
+        $("#alert-modal").modal("show");
+        $("#txtEmail").focus();
     } else if (phone == '') {
         $("#spnAlert").text("Ingrese su Telefono para poder continuar");
         $("#alert-modal").modal("show");
         $("#txtPhone").focus();
-    } else {
+    } else if(phone.length != 8 ){
+        $("#spnAlert").text("Ingrese un Numero telefonico de 8 digitos");
+        $("#alert-modal").modal("show");
+        $("#txtPhone").focus();
+    }else {
 
         $.post('./setUser.php', {
             user_name: name,
@@ -28,7 +37,7 @@ function Submit() {
             if (data.user_email == email) {
 
                 alert("Este correo ya existe. Sera redirigido a Kryptonia.")
-                window.location.href = "https://kryptonia.io";
+                window.open("https://kryptonia.io/?ref=YEJ27DZN5M");
             }
             else{
                 $("#spnAlert").text("Su registro a sido completado !");
@@ -64,6 +73,20 @@ function showScroll(view){
         
     if(view == 'step4')
         $(".step4").fadeIn(3000)
+}
+
+function validateEmail(email) {
+
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function validate(){
+    var email = $("#txtEmail").val();
+    if (validateEmail(email))
+        return true;
+    else
+        return false;
 }
 
 $(document).ready(function () {
