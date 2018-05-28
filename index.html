@@ -32,26 +32,21 @@
                     <div class="card myCard">
                         <div class="card-header">
                             <h3>Superior Coin Registro</h3>
-
                             <br/>
-                            <p id="msgDanger" class="label-warning"></p>
-                            <p id="msgSucces" class="label-succes"></p>
-                            <br/>
+                            <img src="./assets/sup-logo.png" alt="SUP-LOGO">
                         </div>
                         <div class="card-body">
                             <form class="myForm">
 
                                 <div class="form-group">
-                                    <label>Nombre y Apellido</label>
                                     <input type="text" class="form-control" id="txtName" aria-describedby="namelHelp" placeholder="Ingrese su Nombre y Apellido">
                                 </div>
                                 <div class="form-group">
-                                    <label>Correo</label>
+                
                                     <input type="email" class="form-control" id="txtEmail" placeholder="Ingrese su Correo">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div class="form-group">
-                                    <label>Telefono</label>
+                                
                                     <input type="text" class="form-control" id="txtPhone" placeholder="Ingrese su Telefono">
                                 </div>
 
@@ -107,13 +102,27 @@
                     <br/>
                     <button id="btnNext4" type="button" class="btn btn-dark btnSubmit">Next</button>
                 </div>
-            </div>
-        </div>
+            </div> <!-- ENDS ROAD-CONTAINER -->
+        </div> <!-- ENDS ROW -->
+
+        <div class="modal fade" id="alert-modal" tabindex="-1" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header modal-header-success">
+                            <i class="glyphicon glyphicon-thumbs-up"></i>
+                        </div>
+                        <div class="modal-body alert-modal">
+                            <h3><span id="spnAlert"></span></h3>
+                            <br/>
+                            <br/>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
     </div>
     <!-- ENDS CONTAINER-->
-
-
-
 
     <!-- SCRIPTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

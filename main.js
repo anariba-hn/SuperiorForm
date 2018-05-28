@@ -1,27 +1,3 @@
-function doFade(){
-    
-    $("#msg").fadeIn('slow').delay(200).fadeOut('slow').delay(200).fadeIn('slow');
-            
-        
-    /*
-        if(x == 5)
-        {
-            clearInterval(interv);
-            $(".hero").css("visibility", "hidden");
-            $(".myCard").css("visibility", "visible");
-        }
-    
-        $("#msg").fadeIn('slow').delay(200).fadeOut('slow').delay(200).fadeIn('slow');
-        cont ++;
-        console.log(cont);
-        
-        if(cont === 5){
-            clearInterval(interv);
-            $("#myCard").css("visibility", "visible");
-        }
-    */
-}
-
 
 function Submit() {
     var name = $("#txtName").val();
@@ -30,13 +6,16 @@ function Submit() {
     
     if (name == '') {
         
-        $("#msgDanger").text("Ingrese su Nombre para poder continuar");
+        $("#spnAlert").text("Ingrese su Nombre para poder continuar");
+        $("#alert-modal").modal("show");
         $("#txtName").focus();
-    }  else if (email == '') {
-        $("#msgDanger").text("Ingrese su Correo para poder continuar");
+    } else if (email == '') {
+        $("#spnAlert").text("Ingrese su Correo para poder continuar");
+        $("#alert-modal").modal("show");
         $("#txtEmail").focus();
     } else if (phone == '') {
-        $("#msgDanger").text("Ingrese su Telefono para poder continuar");
+        $("#spnAlert").text("Ingrese su Telefono para poder continuar");
+        $("#alert-modal").modal("show");
         $("#txtPhone").focus();
     } else {
 
@@ -52,11 +31,13 @@ function Submit() {
                 window.location.href = "https://kryptonia.io";
             }
             else{
-                $("#spnSuccess").text("Su registro a sido completado !");
+                $("#spnAlert").text("Su registro a sido completado !");
+                $("#alert-modal").modal("show");
                 showScroll("step1");
                 $('html, body').animate({
                 scrollTop: $("#step1").offset().top
                 }, 2000);
+                $("#btnSubmit").css("display", "none");
             }
         })
 
@@ -79,7 +60,7 @@ function showScroll(view){
         $(".step2").fadeIn(3000)
     
     if(view == 'step3')
-        $(".step3").fadeIn(3000)
+        $(".step3").fadeIn(2000)
         
     if(view == 'step4')
         $(".step4").fadeIn(3000)
@@ -87,7 +68,7 @@ function showScroll(view){
 
 $(document).ready(function () {
     
-    setTimeout(showScroll("myCard"), 10000);
+    setTimeout(showScroll("myCard"), 5000);
         
     $("#btnSubmit").click(function () {
         Submit();
@@ -118,22 +99,7 @@ $(document).ready(function () {
     })
     
     $("#btnNext4").click(function(){
-        window.open("https://kryptonia.io");
+        window.open("https://kryptonia.io/?ref=YEJ27DZN5M");
     })
     
-    //setInterval(doFade, 1000);
-    
-        
-    /*setInterval(function() {
-        $("#msg").fadeIn('slow').delay(200).fadeOut('1500').delay(200).fadeIn('slow');
-    }, 2000)
-    
-    doFade.then((succesMessage) => {
-        
-        console.log(succesMessage);
-    }).then(() => {
-        alert('next');
-    })
-    
-    */
 });
