@@ -34,13 +34,12 @@ function Submit() {
             user_phone: phone
         }).done(function (data) {
 
-            if (data.user_email == email) {
-
-                alert("Este correo ya existe. Sera redirigido a Kryptonia.")
-                window.open("https://kryptonia.io/?ref=YEJ27DZN5M");
-            }else if(data.status == 404){
+            if (data.status == 404) {
                 $("#spnAlert").text("Ocurrio un Error, intente nuevamente");
                 $("#alert-modal").modal("show");
+            }else if( data.user_email == email){
+                alert("Este correo ya existe. Sera redirigido a Kryptonia.")
+                window.open("https://kryptonia.io/?ref=YEJ27DZN5M");
             }
             else{
                 $("#spnAlert").text("Su registro a sido completado !");
