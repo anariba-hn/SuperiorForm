@@ -1,11 +1,11 @@
 <?php
 include ("./connex.php"); //include db connection. import $cnn variable.
-$name    = $_POST['user_name'];
-$email     = $_POST['user_email'];
-$phone = $_POST['user_phone'];
+$name     = $_POST['user_name'];
+$email    = $_POST['user_email'];
+$phone    = $_POST['user_phone'];
 $response = array();
 
-if(isset($name, $last, $email, $phone))
+if(isset($name, $email, $phone))
 {
     $query = "SELECT * FROM tbl_users WHERE user_email = '$email'";
 	if (!$result = mysqli_query($cnn, $query))
