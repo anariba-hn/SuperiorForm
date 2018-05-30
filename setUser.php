@@ -16,6 +16,9 @@ if(isset($name, $email, $phone))
     	{
     		$response = $row;
     	}
+
+        $response['status'] = 404;
+        $response['message'] = "Email Exist";
     }
     else{
         
@@ -26,9 +29,7 @@ if(isset($name, $email, $phone))
             $response['status'] = 200;
             $response['message'] = "Success";
         }
-        
-        $response['status'] = 404;
-        $response['message'] = "Email Exist";
+
     }
     
 }else{
