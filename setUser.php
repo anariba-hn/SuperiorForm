@@ -17,7 +17,7 @@ if(isset($name, $email, $phone))
     		$response = $row;
     	}
 
-        $response['status'] = 404;
+        $response['status'] = 400;
         $response['message'] = "Email Exist";
     }
     else{
