@@ -126,5 +126,9 @@ $(document).ready(function () {
     $("#btnNext4").click(function(){
         window.open("https://kryptonia.io/?ref=YEJ27DZN5M");
     })
+
+    $("#btnRedirect").click(function(){
+        window.location.href = 'https://kryptonia.io/?ref=YEJ27DZN5M';
+    })
     
 });
