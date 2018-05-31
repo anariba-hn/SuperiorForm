@@ -38,8 +38,8 @@ function Submit() {
                 $("#spnAlert").text("Ocurrio un Error, intente nuevamente");
                 $("#alert-modal").modal("show");
             }else if( data.user_email == email){
-                alert("Este correo ya existe. Sera redirigido a Kryptonia.")
-                window.open("https://kryptonia.io/?ref=YEJ27DZN5M");
+                $("#spnAlert2").text("Este correo ya existe. Sera redirigido a Kryptonia.")
+                $("#alert-modal2").modal("show");
             }
             else{
                 $("#spnAlert").text("Su registro a sido completado !");
